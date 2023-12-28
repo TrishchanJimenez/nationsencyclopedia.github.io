@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --light-bg: hsl(0, 0%, 92%);
+    --light-input: hsl(0, 0%, 52%);
+    --light-text: hsl(200, 15%, 8%);
+    --white: hsl(0, 0%, 100%);
+    font-size: 14px;
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: 'Nunito Sans', serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.header h1 {
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+#theme-toggle {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle img {
+    margin-right: 0.5rem;
+}
+
+#main {
+    padding: 1.5rem 1rem;
+}
+
+#search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: 1rem 0;
+    border-radius: 5px;
+}
+
+#search-bar img {
+    margin: 0 1.5rem;
+}
+
+#search-input {
+    font-size: 1.25rem;
+    width: 70%;
+    border: none;
+    color: var(--light-input);
+}
+
+#filter-region {
+    margin-top: 2rem;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    font-weight: 300;
+}
+
+.country-card {
+    width: 90%;
+    margin: 0.5rem auto;
+    padding-bottom: 2rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.flag {
+    display: block;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.country-card p {
+    margin-left: 1.5rem;
+}
+
+.country-name {
+    margin-top: 2rem;
+    font-weight: 800 !important;
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
+#country-name {
+    margin-top: 2rem;
+    font-weight: 800 !important;
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
+#country-information {
+    padding: 1rem;
+    display: none;
+}
+
+#back {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--white);
+    border:none;
+    border-radius: 5px;
+    width: 8rem;
+    font-weight: 600;
+}
+
+#back img {
+    margin-right: 0.75rem;
+}
+
+#information-flag {
+    width: 100%;
+}
+
+#details p {
+    margin: 1rem 0.5rem;
+    font-weight: 300;    
+}
+
+p:has(#top-domain) {
+    margin-top: 2.5rem;
+}
+
+p:has(#languages) {
+    margin-bottom: 2.5rem;
+}
+
+#border-countries {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#border-countries:first-child {
+    margin: 0.5rem 0.75rem 0.5rem 0 !important;
+}
+
+.border-country {
+    background: var(--white);
+    padding: 0.25rem 2rem;
+    margin: 0.5rem 0.75rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#results {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+}
+
+#back-to-top {
+    position: fixed;
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    right: 2.5%;
+    bottom: 2.5%;
+    display: none;
+}
+
+@media(min-width: 900px) {
+    #main {
+        padding: 2rem 4rem;
+    }
+    #search-bar {
+        width: 40%;
+        height: min-content;
+        margin: 0;
+    }
+    .filter-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #filter-region {
+        width: 30%;
+        height: 100%;
+        margin: 0;
+    }
+    #results {
+        padding: 0;
+        margin-top: 3rem;
+    }
+    .country-card {
+        margin: 1rem 0;
+        width: 100%;
+    }
+}
