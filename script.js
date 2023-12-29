@@ -53,10 +53,13 @@ const showCountryCards = (data) => {
     data.forEach((country) => {
         countryCodes[country.alpha3Code] = country.name;
     })
-    countries.forEach((element) => {
-        element.addEventListener('click', () => {
-            showCountryInformation(element.id, data);
-        });
+    results.addEventListener('click', (e) => {
+        console.log(e.target);
+        if(e.target.classList.contains('country-card')) {
+            showCountryInformation(e.target.id, data);
+        } else if (e.target.parentNode.classList.contains('country-card')) {
+            showCountryInformation(e.target.parentNode.id, data);
+        }
     })
 }
 
